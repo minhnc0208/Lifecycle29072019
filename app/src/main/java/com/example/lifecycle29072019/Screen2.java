@@ -9,57 +9,62 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Screen2 extends AppCompatActivity {
-    Button btnIntent2;
 
+    Button btnIntent2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen2);
-        btnIntent2 = findViewById(R.id.btnIntent2);
+        Log.d("BBB", "onCreate2");
+
+        btnIntent2 = findViewById(R.id.buttonIntent2);
+
         btnIntent2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Screen2.this, Screen3.class);
+                Intent intent = new Intent(
+                        Screen2.this,
+                        Screen3.class);
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("BBB", "onStart 2 ");
-    }
-
-    @Override
-    protected void onPause() {
-        Log.d("BBB", "onPause 2 ");
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.d("BBB", "onStop 2 ");
-        super.onStop();
-    }
-
-    @Override
-    protected void onRestart() {
-        Log.d("BBB", "onRestart 2 ");
-        super.onRestart();
+        Log.d("BBB", "onStart2");
     }
 
     @Override
     protected void onResume() {
-        Log.d("BBB", "onResume 2 ");
         super.onResume();
+        Log.d("BBB", "onResume2");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("BBB", "onPause2");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("BBB", "onStop2");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("BBB", "onRestart2");
     }
 
     @Override
     protected void onDestroy() {
-        Log.d("BBB", "onDestroy 2 ");
         super.onDestroy();
+        Log.d("BBB", "onDestroy2");
     }
-
 }

@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     Button btnIntent;
 
     @Override
@@ -16,12 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("BBB", "onCreate");
-        btnIntent = findViewById(R.id.btnIntent);
+
+        btnIntent = findViewById(R.id.buttonIntent);
         btnIntent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Screen2.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -33,33 +36,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("BBB", "onResume");
+    }
+
+    @Override
     protected void onPause() {
-        Log.d("BBB", "onPause");
         super.onPause();
+        Log.d("BBB", "onPause");
     }
 
     @Override
     protected void onStop() {
-        Log.d("BBB", "onStop");
         super.onStop();
+        Log.d("BBB", "onStop");
     }
 
     @Override
     protected void onRestart() {
-        Log.d("BBB", "onRestart");
         super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.d("BBB", "onResume");
-        super.onResume();
+        Log.d("BBB", "onRestart");
     }
 
     @Override
     protected void onDestroy() {
-        Log.d("BBB", "onDestroy");
         super.onDestroy();
+        Log.d("BBB", "onDestroy");
     }
-
 }
